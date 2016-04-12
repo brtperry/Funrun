@@ -1,0 +1,26 @@
+/*
+
+    Webkit fix 
+
+*/
+
+html, body { height: 100%; margin:auto; }
+html  
+{
+    background: #faf9f2;
+    
+    /*
+
+        Ensure our background image centers and covers the whole page.
+
+    */
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+}
+
+p, output 
+{
+    color:#fff;
+}

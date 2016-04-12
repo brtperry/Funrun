@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+        <meta name="keywords" content="Beaverbrooks,Beaverbrooks Blackpool 10K, Blackpool, 10K, fun run, funrun" />  	
+	    <meta name="description" content="The home page of Beaverbrooks Blackpool 10K" />  	
+	    <meta name="robots" content="index, follow, noarchive" />  	
+	    <meta name="googlebot" content="noarchive" />
+        <title>Beaverbrooks Blackpool 10K</title>
+
+        <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" />
+        
+        <link rel="shortcut icon" href="img/micon.ico" type="image/x-icon" /> 
+
+        <!--[if IE]>
+    	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	    <![endif]-->
+  	    <!--[if lte IE 6]>
+          <script src="css/ie6.css"></script>
+  	    <![endif]--> 
+
+        <script type="text/javascript" src="http://www.google.com/jsapi?autoload=%7Bmodules%3A%5B%7Bname%3A%22maps%22%2Cversion%3A3%2Cother_params%3A%22sensor%3Dfalse%22%7D%5D%7D"></script>
+        <script type="text/javascript" charset="utf-8" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAIPatN5CiTZVFy6FQM0l5U8Ab2uwZ9M6Y&sensor=false"></script>
+     	<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="js/jquery.lwtCountdown-0.9.5.js"></script>
+  	    <script type="text/javascript" charset="utf-8" src='js/jquery.scrollTo-min.js'></script>
+	    <script type="text/javascript" charset="utf-8" src='js/jquery.localscroll-min.js'></script>
+  	    <script type="text/javascript" charset="utf-8" src='js/init.js'></script>
+        <script type="text/javascript" charset="utf-8"  src="js/jquery.jswitch.js"></script>
+
+	    <script type="text/javascript">
+	    //<![CDATA[
+//	        $(function () {
+
+//<link rel="stylesheet" href="css/media.css" type="text/css" media="screen" />
+
+//	            $('.toast a:link').click(function (e) {
+
+//	                $("#ninor").removeClass('active');
+//	                $("#manor").removeClass('active');
+//	                $("#minor").removeClass('active');
+//	                $("#inor").removeClass('active');
+//	                $("#renor").removeClass('active')
+
+
+//            			e.preventDefault();
+//            			var $this = $(this);
+//            			$this.closest('ul').children('li').removeClass('active');
+//            			$this.parent().addClass('active');
+//        		});
+//            });
+
+           function switchover(d) {
+
+               $("#ninor").removeClass('active');
+               $("#manor").removeClass('active');
+               $("#minor").removeClass('active');
+               $("#inor").removeClass('active');
+               $("#renor").removeClass('active')
+               $("#compo").removeClass('active')
+
+               $(d).addClass('active');
+    
+            }
+
+
+	    //]]>
+        </script>
+
+        <script type="text/javascript">
+	    //<![CDATA[
+            $(document).ready(function () {
+                $('#myGallery').jswitch();
+            });
+	    //]]>
+        </script>
+
+        <script type="text/javascript">
+    	//<![CDATA[
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-8736404-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+	    //]]>
+        </script>
+
+        <script type="text/javascript">
+
+            var directionDisplay;
+            var directionsService = new google.maps.DirectionsService();
+            var map;
+            var origin = null;
+            var destination = null;
+            var waypoints = [];
+            var markers = [];
+
+            function loadmap() {
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                var blackpool = new google.maps.LatLng(53.81741362363378, -3.052654266357422);
+                var myOptions = {
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    center: blackpool,
+                    disableScrollWheelZoom: true
+                }
+                map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+                directionsDisplay.setMap(map);
+
+                calcRoute();
+
+                addMarker(new google.maps.LatLng(53.808454761792286, -3.052750825881958));
+
+            }
+
+            function addMarker(latlng) {
+
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: "img/parkingsm.png"
+                })
+
+                 markers.push(marker);
+
+            }
+
+
+            function calcRoute() {
+
+                var request = {
+                    origin: "FY1 2JQ, United Kingdom",
+                    destination: "Harrowside W, Blackpool FY4",
+                    waypoints: waypoints,
+                    travelMode: google.maps.DirectionsTravelMode.DRIVING
+                };
+
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+
+                directionsVisible = true;
+            }
+
+            google.setOnLoadCallback(loadmap);
+
+        </script>
+
+    </head>
+
+    <body class="home">
+
+        <div id="container">
+
+	        <!--
+	        *
+	        *
+	        * Header containing photo of Lesley and promotional plate
+	        *<em>Sunday May 13, 2012</em>
+	        *
+	        -->	
+	        <header class="container_24" id="tophead">
+
+                <div id="social">
+ 
+                    <a href="http://www.facebook.com/Beaverbrooks?sk=wall#!/pages/Beaverbrooks-Blackpool-10k-Fun-Run/169558313093207"><img class="right" src="img/facebookIcon.png" alt="Facebook page." /></a>
+                    <a href="http://www.twitter.com/Blackpool10K/"><img class="left" src="img/twitterIcon.png" alt="Follow Beaverbrooks Blackpool10K on Twitter" /></a>
+                               
+                </div>
+
+                <h1 id="promotion">Sunday May 13
+     
+          	        <time datetime="2012-05-13">Beaverbrooks Blackpool 10K Fun Run</time>
+
+		        </h1>
+
+	        </header>
+	        <!--
+	        *
+	        *
+	        * Place holder for our new logo and the countdown dashboard
+	        *
+	        -->
+	        <section id="logo" class="container_24">
+
+		        <br />
+		        <br />
+
+                <section class="grid_10 prefix_1">
+
+                    <article>
+      
+                        <header> <h2>WELCOME</h2> </header>
+                              
+                        <p>Be part of the 30th Beaverbrooks Blackpool 10k Fun Run and help us to raise more money than ever! All the information you need for the day can be found below.</p>
+                        <p>
+                            <strong>Date:</strong>&nbsp;Sunday 13th May 2012<br />
+                            <strong>Distance:</strong>&nbsp;10km<br />
+                            <strong>Start Time:</strong>&nbsp;11:00am<br />
+                            <strong>Location:</strong>&nbsp;Blackpool Promenade, at the Hilton Hotel<br />
+                            <strong>Entry Fee:</strong>&nbsp;&#163;11.00 for 16+, &#163;8.50 if aged between 13 &amp; 15
+                            <strong>Finish:</strong>&nbsp;Limited edition medal available for all finishers
+                        </p>
+
+                    </article>
+
+		        </section>
+
+                <section class="grid_10 prefix_1">
+
+                    <article>
+ 
+                        <header> <h2>COUNTDOWN</h2> </header> 
+                        <p>How long?</p>    
+
+	    	            <section id="rounded">
+
+			                <div id="dashboard">
+
+			                    <div class="dash weeks_dash">
+
+			                        <span class="dash_title">weeks</span>				
+
+			                        <div class="digit">0</div>
+
+			                        <div class="digit">7</div>
+
+			                    </div>
+
+			                    <div class="dash days_dash">
+
+			                        <div class="digit">0</div>
+
+			                        <div class="digit">5</div>
+
+			                        <span class="dash_title">days</span>
+
+			                    </div>
+
+			                    <div class="dash hours_dash">
+
+			                        <span class="dash_title">hours</span>			
+
+			                        <div class="digit">1</div>
+
+			                        <div class="digit">9</div>
+
+			                    </div>
+
+			                    <div class="dash minutes_dash">
+
+			                        <div class="digit">2</div>
+
+			                        <div class="digit">1</div>
+
+			                        <span class="dash_title">minutes</span>
+
+			                    </div>
+
+			                    <div class="dash seconds_dash">
+
+			                        <span class="dash_title">seconds</span>
+
+			                        <div class="digit">4</div>
+
+			                        <div class="digit">5</div>
+
+			                    </div>
+
+		                    </div>
+
+			                <!-- Countdown dashboard end -->
+
+			                <script type="text/javascript" charset="utf-8">
+			                    jQuery(document).ready(function () {
+			                        $('#dashboard').countDown({
+			                            targetDate: {
+			                                'day': 13,
+			                                'month': 05,
+			                                'year': 2012,
+			                                'hour': 12,
+			                                'min': 0,
+			                                'sec': 0
+			                            }
+			                        });
+			                    });
+
+			                </script>
+
+	    	            </section>
+
+                     </article>
+
+                </section>
+
+	        </section>
+	        <!--
+	        *
+	        *
+	        * End logo...
+	        *
+	        * Begin menu navigation
+	        *
+	        -->
+      	    <nav id="menu" class="container_24 prefix_1">
+
+        	    <ul class="toast">
+
+          	        <li id="ninor" class="grid_4 alpha active"><a onclick="switchover('#ninor');" href="#homepage">Home</a></li>
+
+          	        <li id="manor" class="grid_4"><a onclick="switchover('#manor');" href="#mappage">Route</a></li>
+
+          	        <li id="minor"class="grid_4"><a onclick="switchover('#minor');" href="#charitypage">Charity</a></li>
+
+          	        <li id="inor" class="grid_4"><a onclick="switchover('#inor');" href="#informationpage">Information</a></li>
+
+                    <li id="renor" class="grid_4"><a onclick="switchover('#renor');" href="#registrationpage">Register</a></li>
+
+                    <li id="compo" class="grid_4"><a onclick="switchover('#compo');" href="#competitionpage">Competition</a></li>
+    
+        	    </ul>
+ 
+      	    </nav>
+	        <!--
+	        *
+	        *
+	        * End menu...
+	        *
+	        * Begin content
+	        *
+	        -->
+	        <section id="content" class="container_24">
+	    
+		        <hr class="clear" />
+	            <!--
+	            *
+	            *
+	            * Sliding content...
+	            *
+	            *
+	            -->
+	            <div id="sliding" class="container_24">
+
+		            <div class="sectional">
+
+   		    	        <ul>
+		                    <!--
+
+		    	            *  Home page
+
+		    	            -->
+			                <li class="sub" id="homepage">
+
+				                <hr class="clear" />
+
+				                <section class="grid_10 prefix_1">
+
+               	    		        <article>
+   
+                        		        <header> <h2>Beaverbrooks BLACKPOOL 10K FUN RUN</h2> </header>
+
+                  				        <p>2012 marks the 30th year for the event and we&#39;re more excited than ever. Whether you&#39;re a regular, or thinking of entering for the first time, you&#39;re in the right place! Over the years the Fun Run has raised over &#163;1.5 million for charity and this year we need your help to keep up the good work. Our chosen charity for 2012 is NSPCC.  You can read all about the fantastic work they do on the <a onclick="switchover('#minor');" href="#charitypage">Charity</a> page.
+                                        <br />
+                                        
+                                        <br />
+                                        Places are limited to 4000 runners, so enter now on our <a onclick="switchover('#renor');" href="#registrationpage">registration</a> page. We&#39;ll look forward to seeing you on the big day!
+                                        </p>
+
+            	    		        </article>
+
+            	    		        <article id="speaker-list">
+
+              				            <header> <h2>2011 Runners</h2> </header>
+
+              				            <p>The Fun Run welcomes runners of all abilities and all ages and we&#39;re very much of the belief that it&#39;s the taking part that counts. We love seeing runners in fancy dress as it makes the day even more fun! For the serious runners out there that want a time to beat, last year&#39;s winner; <em>Steve Littler</em> crossed the line in an impressive 31.56 minutes! Meet some familiar faces from the 2011 run:</p>
+
+		        		                <ul>
+
+        		    		                <li>
+
+                                                <a href="#" id="sla1"></a>         					                    
+
+          					                    <strong>Roger</strong>
+
+        		    		                </li>
+
+        		    		                <li>
+
+                                                <a href="#" id="sla2"></a>
+
+          					                    <strong>James &amp; Vicki</strong>
+
+        		    		                </li>
+
+        		    		                <li>
+
+          					                    <a href="#" id="sla3"></a>
+
+          					                    <strong>Richard</strong>
+
+        		    		                </li>
+
+        		    		                <li>
+
+          					                    <a href="#" id="sla4"></a>
+
+          					                    <strong>The Bear</strong>
+
+        		    		                </li>
+
+ 					                    </ul>
+
+            	    		        </article>
+
+    		    		            <hr class="clear" />
+
+            	    		        <article>
+
+      					                <header> <h2>About This Years charity</h2> </header>
+
+					                    <a href="http://www.nspcc.org.uk/"><img class="styled-photo" src="img/nspcc.png" alt="NSPCC" /></a>
+
+              				            <p>The NSPCC is delighted to join forces with Beaverbrooks and be their chosen charity of the year for the 2012 Blackpool 10k.</p>
+
+                                        <p>This is an exciting time for the NSPCC locally because we have chosen Blackpool as a key location where we will be developing our services for children and young people.</p>
+      
+            	    		        </article>
+
+				                </section>
+
+				                <section id="donators" class="grid_6 prefix_1 mini_sponsors">
+
+                	    		    <article>
+
+					                    <header> <h3><a href="http://www.justgiving.com/nspcc">Donate Now</a></h3> </header>
+
+                                        <a onclick="switchover('#minor');" href="#charitypage"><img src="img/nspcc.png" alt="NSPCC Logo" /></a>
+
+                                        <header> <h3>Our Sponsors</h3> </header>
+
+      					                <a href="http://www.blackpoolgazette.co.uk/"><img src="img/gazette.png" alt="Blackpool Evening Gazette" /></a>
+
+                                        <a href="http://www.wave965.com/"><img src="img/radiowave.png" alt="RadioWave 96.5" /></a>
+
+                                        <a href="http://www1.hilton.com/en_US/hi/hotel/BLKBLTW-Hilton-Blackpool-hotel/index.do?WT.srch=1"><img src="img/hh.png" alt="Hilton Hotel" /></a>
+
+                                        <a href="http://www.beaverbrooks.co.uk/"><img src="img/beaverbrooks.png" alt="Beaverbrooks" /></a>
+
+                                        <a href="http://www.visitblackpool.com/"><img src="img/visitblackpoollogo.png" alt="Visit Blackpool" /></a>
+
+                                        <p><em>&ldquo;</em>The event returns to it&#39;s original route meaning participants will get the opportunity to run along the fantastic new promenade seeing the stunning new additions such as the Comedy Carpet and Festival House.  All the team at Marketing Blackpool would like to wish those participating the best of luck!<em>&ldquo;</em></p>
+ 
+            	    		        </article>
+
+        		                </section>
+
+				                <section id="thin-sidebar" class="grid_5">
+
+            	    		        <article class="testimonials">
+
+					                    <header> <h3>Testimonials</h3> </header>
+
+      					                    <ul>
+
+                        		    		    <li>
+
+          					                        <blockquote><em>&ldquo;</em>The Beaverbrooks Blackpool 10K is such a great event because it is a great spectacle for the town and in it&#39;s 30 years it has raised over &#163;1.5 million for local charities.<em>&ldquo;</em></blockquote>
+
+          					                        <cite><a href="#"><img src="img/peeps/abrown.jpg" width="50" height="50" alt="Andrew Brown MBE"><strong>Andrew Brown MBE</strong><br />Beaverbrooks</a></cite>
+
+        		    		                    </li>
+
+        		    		                    <li>
+
+          					                        <blockquote><em>&ldquo;</em>The Gazette has been closely involved with the Blackpool 10K Fun Run every year since its inception 30 years ago.
+It&#39;s a great event for the town raising much needed cash for local charities.<em>&ldquo;</em></blockquote>
+
+          					                        <cite><a href="#"><img src="img/peeps/abott.jpg" width="50" height="50" alt="Alison Bott"><strong>Evening Gazette</strong><br />Alison Bott</a></cite>
+
+        		    		                    </li>
+
+        		    		                    <li>
+
+          		        		                    <blockquote><em>&ldquo;</em>This event is an extremely popular part of the sporting calendar for local residents and businesses alike and brings many runners into the resort.<em>&ldquo;</em></blockquote>
+
+          					                        <cite><a href="#"><img src="img/peeps/rwave.png" width="50" height="50" alt="rWave"><strong>Marketing Blackpool</strong><br />Natalie Wyatt</a></cite>
+
+        		    		                    </li>
+
+        		    		                    <li>
+
+          		        		                    <blockquote><em>&ldquo;</em>We&#39;re so delighted Pinpoint Prostate Cancer Appeal was selected by the Beaverbrooks Blackpool 10K Fun Run Team in 2011. A fantastic amount was raised to benefit patients at Blackpool Teaching Hospitals NHS Foundation Trust. Thank you for your generous support.<em>&ldquo;</em></blockquote>
+
+          					                        <cite><a href="#"><img src="img/peeps/anc.jpg" width="50" height="50" alt="doc"><strong>Blue Skies Hospitals</strong><br />Kathryn Ancell</a></cite>
+
+        		    		                    </li>
+
+					                        </ul>
+
+            	    		        </article>
+
+				                </section>
+
+			                </li>
+
+		                    <!--
+
+		    	            *  End Home
+		    	            *  Begin map
+
+		    	            -->
+ 			                <li class="sub" id="mappage">
+
+                                <section class="grid_22 prefix_1">
+                            
+                                    <article>
+
+                                        <header> <h3>The Course</h3> </header>
+
+                                        <p>The course is a distance of 10 kilometres. Starting at the Hilton Hotel <strong>{A}</strong>, heading south along the promenade past Blackpool Tower, The Golden Mile, and Blackpool Pleasure Beach to the world&#39;s largest Mirror Ball <strong>{B}</strong>.
+                                        It then turns to return along the promenade and finishes outside the Hilton Hotel on the Middle Walk.  Water stations will be situated at approximately quarter, half and three quarter distances, as well as at the finish.</p>
+                                        <p>The area around the Hilton Hotel and the race start can get very busy on the day, please therefore ensure you allow time to find suitable parking. 3 chargeable car parks have been identified on the map.</p>
+
+                                        <p>Best place to park is Central Parking.  From the promenade catch a tram to the <a href='http://www1.hilton.com/en_US/hi/hotel/BLKBLTW-Hilton-Blackpool-hotel/index.do'>Hilton Hotel</a>.</p>
+
+                                    </article>
+
+                                </section>
+
+                                <div id="map" style="width:95%; height:700px"></div>
+
+ 			                </li>
+		                    <!--
+
+		    	            *  End map
+		    	            *  Begin charity
+
+		    	            -->
+ 			                <li class="sub" id="charitypage">
+
+                                <section id="charity_section" class="grid_24 prefix_1"></section>
+                                
+                                <section id="nspcctitles" class="grid_22 prefix_1">
+
+                                    <article>
+					                
+                                        <header> <h3>The NSPCC</h3> </header>
+
+                        			    <p>The NSPCC is delighted to join forces with Beaverbrooks and be their chosen charity of the year for the 2012 Blackpool 10k.</p>
+
+                                        <p>This is an exciting time for the NSPCC locally because we have chosen Blackpool as a key location where we will be developing our services for children and young people.</p>
+    
+            	    		        </article> 
+
+                                     <section class="grid_24 charity">
+
+                                        <section class="grid_20 prefix_1">
+
+                	    		            <article>
+
+					                            <header> <h3>New Services, Blackpool</h3> </header>
+
+                                                <p>We will be launching <strong>new services</strong> to help vulnerable children, including those to <strong>protect</strong> babies and toddlers from abuse, providing help for children affected by physical abuse in vulnerable families, delivering therapeutic support to <strong>children</strong> who have experienced sexual abuse and protecting those who have suffered neglect.  By taking part in the Beaverbrooks fun run you will be helping us to change the lives of vulnerable children across Blackpool.</p>
+ 
+             	    		                </article>
+
+                                        </section>
+
+                                    </section>  
+
+                                     <br />
+                                     <hr class="clear" />
+
+                                     <section class="grid_24">
+
+                                        <section class="grid_20 prefix_1">
+
+                	    		            <article>
+
+					                            <header> <h3>Louise Stimson</h3>Head of local fundraising in the North West said:</header>
+
+                                                <p>&ldquo;The NSPCC&#39;s history in Blackpool spans more than 100 years and we are committed to creating a lasting legacy for children here.  By participating in this brilliant event, you are helping us to make a difference to children who need our help, support and protection.  By changing children&#39;s lives now, we are investing in their future, their communities and society as a whole.  Thank you for being part of this exciting journey to turn the tide for children in Blackpool.&ldquo;</p>
+ 
+             	    		                </article>
+
+                                        </section>
+
+                                    </section>
+                                                                        
+                                     <section class="grid_24">
+
+                                        <section class="grid_20 prefix_1">
+
+                	    		            <article>
+
+					                            <header> <h3>ChildLine</h3></header>
+
+                                                <p>is a service provided and funded by the National Society for the Prevention of Cruelty to Children (NSPCC). CHILDREN 1ST (RSSPCC) delivers the ChildLine service in Scotland on behalf of the NSPCC. NSPCC registered charity numbers 216401 and SC037717. CHILDREN 1ST registered charity number SC016092</p>
+ 
+             	    		                </article>
+
+                                        </section>
+
+                                    </section> 
+
+
+                                </section>
+
+ 			                </li>
+		                    <!--
+
+		    	            *  End charity
+		    	            *  Begin information
+
+		    	            -->
+ 			                <li class="sub" id="informationpage">
+
+                                <section class="grid_10 prefix_1">
+
+                                    <article>
+
+                                        <header> <h3>Registration</h3> </header>
+
+                                        <p>To secure your place in the run, we advise entering online. You can register online now by completing the <a onclick="switchover('#renor');" href="#registrationpage">online entry form</a>. The entry fee is  &#163;11.00 for adults aged 16 and over and  &#163;8.50 for children aged 13&#151;15.  Running packs including your race number and all relevant information will be sent out from the beginning of March.</p>
+                                        <p>If you&#39;d prefer to register on the day, this can be done via the Late Check&#151;In desk at the Hilton Hotel from 9.30am onwards.  Please ensure you leave enough time before the race starts.</p>
+                                    
+                                        <header> <h3>Facilities</h3> </header>
+
+                                        <p>The HQ for the event is the Hilton Hotel, North Promenade Blackpool.</p>
+                                        <p><a href="http://www1.hilton.com/en_US/hi/hotel/BLKBLTW-Hilton-Blackpool-hotel/index.do?WT.srch=1" target="_blank"><img src="img/hh.png" alt="Hilton Hotel" class="styled-photo" /></a>The hotel kindly provides changing facilities, toilets and a place to leave belongings. Whilst every care is taken to ensure belongings are kept safe, the Hilton Hotel and the organisers of the event cannot be held responsible for any loss or damage sustained.</p>
+                                        <p>Refreshments will be on sale at the hotel throughout the day.</p>
+
+                                        <header> <h3>Serious Runners</h3> </header>
+
+                                        <p>For safety reasons, there will be a section at the front of the Start line for serious runners expecting to complete the course in less than 40 minutes.  Please do not line up in this area unless you expect to finish in under 40 minutes.</p>
+                                    
+                                        <header> <h3>Racing Wheelchairs and Rollerskates</h3> </header>
+
+                                        <p>There is a special start for racing wheelchair entrants at 10.50 am (10 minutes prior to the main Start time).</p>
+                                        <p>In the interests of safety we regret that roller skaters will not be allowed to participate.</p>
+
+                                    </article>
+
+                                </section>
+
+                                <section class="grid_10 prefix_1">
+
+                                    <article>
+
+                                        <header> <h3>Transport</h3> </header>
+
+                                        <p>Blackpool is accessible by all main transport methods. <a href="http://www.blackpooltransport.com/Default.aspx" target="_blank"><img src="img/blackpool_transport_logo.png" alt="Blackpool Transport" class="styled-photo2" /></a> Train stations are located at Blackpool North and Blackpool South with regular services operating between each of the two (please use Blackpool North if travelling by train to the Fun Run).</p>
+                                        <p>A frequent and reliable bus and tram service are also operated in Blackpool town centre, for full details visit <a href="http://www.blackpool.gov.uk">Blackpool Gov</a></p>
+                                        
+                                        <header> <h3>Medical Facilities</h3> </header>
+
+                                        <p>St John&#39;s Ambulance personnel will be in attendance along the course and at the finish.</p>
+                                        <p><a href="http://www.sja.org.uk/sja/default.aspx" target="_blank"><img src="img/st-john-ambulance.png" alt="St Johns Ambulance" class="styled-photo2" /></a>There will also be a rescue bus following runners.  If you find yourself in any difficulty, please wait for the rescue bus and you will be taken back to the start area.</p>
+
+                                        <header> <h3>The Finish</h3> </header>
+
+                                        <p>Marshals will log your race number as you pass through the finish line.  To ensure your correct position and time are printed on the results, you must ensure you retain your position when entering the lanes after the finish, displaying your race number clearly.</p>
+
+                                        <p>Upon completion of the course, every runner will receive a Limited Edition Medal.  A full results list will be published in the Gazette on Monday 14th May, as well as on this website.</p>
+
+                                    </article>
+
+                                </section>
+
+ 			                </li>
+		                    <!--
+
+		    	            *  End information
+		    	            *  Begin registration
+
+		    	            -->
+ 			                <li class="sub" id="registrationpage">
+
+                                <iframe  height="100%" width="100%" seamless="seamless" src="Register.aspx"></iframe>
+
+ 			                </li>
+		                    <!--
+
+		    	            *  End registration
+
+		    	            -->
+
+		                    <!--
+
+		    	            *  End information
+		    	            *  Begin registration
+
+		    	            -->
+ 			                <li class="sub" id="competitionpage">
+
+                                <section id="Section1" class="grid_22 prefix_1">
+
+                                    <section id="Section3" class="grid_20 prefix_1">
+
+                                        <article>
+					                
+                                            <header> <h3>T Shirt Competition</h3> </header>
+
+              	    		            </article> 
+
+                                    </section>
+
+                                     <section class="grid_24 charity">
+
+                                        <section class="grid_20 prefix_1">
+
+                	    		            <article>
+
+					                            <header> <h3>Download</h3> </header>
+
+                        			            <p>Download the Beaverbrooks Blackpool 10K Fun Run <strong>design a TShirt competition form</strong>.</p>
+
+                                                <p><a target="_blank" href="BeaverbrooksBlackpool10KDesignTShirt.pdf"><img src="img/pdf_logo.png" alt="Download T Shirt competition form." /></a></p>
+ 
+             	    		                </article>
+
+                                        </section>
+
+                                    </section>
+
+                                     <br />
+                                     <hr class="clear" />
+
+                                    <section id="Section2" class="grid_20 prefix_1">
+
+                                        <article>
+					                
+                                            <header> <h3>Open to all Blackpool Primary Schools</h3> </header>
+
+                        			        <p>Beaverbrooks is proud to announce that the 2012 Beaverbrooks Blackpool 10k Fun Run will be held in aid of the NSPCC.  Now in its 30th year, the Fun Run has raised over &#163;1,500,000 for local charities. 2012 is set to top the records and with your help we hope to nudge the fund towards the &#163;2.5 million needed for the new NSPCC Blackpool Service Centre.</p>
+    
+                                            <p>To celebrate the 30th anniversary of the event, Beaverbrooks invite local primary school children to take part in the official Fun Run T-shirt Competition!  The winning design will feature on the Fun Run t-shirts which will be sold to raise money for the NSPCC.</p>
+
+                                            <p>Shortlisted entries will be chosen by Blackpool Gazette readers, with two winners being selected from primary and infants categories, and the overall winner being picked by a special celebrity judge.</p>
+                                            <p>Getting involved couldn&#39;t be easier. Simply <a href="BeaverbrooksBlackpool10KDesignTShirt.pdf">download the t-shirt template</a> and send your designs to Fun Run HQ, PO Box 293, Lytham St Annes, FY8 9EU. All entries must include child&#39;s name, age and school. Deadline for entries is 24th February 2012.</p>
+
+                                            <p>So please put your creative hats on and help Beaverbrooks to make 2012 the best Fun Run yet.</p>
+
+                                            <br />
+
+                                            <p><strong>The 2012 Fun Run &#39;quick dry Sport&#39; T-Shirts featuring the winning design will go on sale from mid-March. </strong></p>
+
+            	    		            </article> 
+
+                                    </section>
+
+                                </section>  
+
+ 			                </li>
+		                    <!--
+
+		    	            *  End registration
+
+		    	            -->
+
+   		                </ul>
+
+		            </div>	
+
+	            </div>
+
+		        <hr class="clear" />
+	            <!--
+	            *
+	            *
+	            * End sliding content...
+	            * Begin celebrating 30 years
+	            *
+	            -->
+
+		        <hr class="clear" />
+	            <!--
+	            *
+	            *
+	            * The lovely slideshow
+	            *
+	            -->
+                <section id="myGallery" class="grid_24 alpha omega">
+
+                   <ul>
+
+                      <li><img src="img/slide/i0.jpg" alt="Start line with Lesley." /></li>
+                      <li><img src="img/slide/i7.jpg" alt="Cheque presentation to PinPoint." /></li>
+                      <li><img src="img/slide/i6.jpg" alt="Steve Littler, finished first in a time of 31.56.  Well done." /></li>			
+                      <li><img src="img/slide/i5.jpg" alt="Andrew Scott." /></li>
+                      <li><img src="img/slide/i4.jpg" alt="Vicki, Gemma and James finishing together." /></li>
+                      <li><img src="img/slide/i3.jpg" alt="Three concerned looks." /></li>
+                      <li><img src="img/slide/i2.jpg" alt="Wet, happy fun runners." /></li>
+                      <li><img src="img/slide/i1.jpg" alt="Rainy poured down just before the start of the race." /></li>
+
+                   </ul>
+
+                </section>
+	            <!--
+	            *
+	            *
+	            * End sliding content...
+	            * Begin celebrating 30 years
+	            *
+	            -->
+	    	    <section id="celebrate" class="grid_24 alpha omega">
+
+   		            <article class="grid_22 prefix_1">
+
+           	    	    <a href="#"><img src="img/lpr.png" width="220" height="132" alt="Raising smiles for 30 years." class="logo-left"/></a>
+
+      		    	    <header> <h2>Beaverbrooks Blackpool 10K, Celebrating 30 Years</h2> </header>
+
+      		    	    <p>The Beaverbrooks Blackpool 10K Fun Run first started in 1983 and has grown in popularity ever since. Attracting thousands of runners each year, the event is organised by the St Annes Coordination of Charities along with Beaverbrooks the Jewellers, The Blackpool Gazette, Radio Wave and the Hilton Hotel, all of whom have provided overwhelming and fundamental support over the last 30 years. The event also wouldn&#39;t be possible without the help of various other individuals and organisations including Blackpool Tourism Department, the local Police force, and the 200 marshalls that give up their time on a voluntary basis.</p>
+                        <p>Each year the chosen charity changes and we&#39;re extremely proud to have raised over &#163;1.5 million for charities including Cancer Research UK, Manchester Royal Children&#39;s Hospital, Trinity Hospice, Brian House Children&#39;s Hospice and Blackpool Victoria Hospital for the Blue Skies &amp; Prostate Cancer Appeals. This money has helped to save lives both in the local area and beyond. In addition to these chosen charities, the Fun Run is also a great way for local charities to raise money; organisers estimate that this additional fundraising takes the total figure to over &#163;3 million. We couldn&#39;t have done this without your support and so would like to say a massive THANK YOU. Please help us to continue raising money and saving lives by taking part, donating or fundraising. Together let&#39;s make 2012 the biggest year yet and celebrate 30 years in style.</p>
+                        <p>From all of us here at the charity, thanks in advance for your support.</p>
+
+      		        </article>
+
+	    	    </section>
+	            <!--
+	            *
+	            *
+	            * End celebrating 30 years
+	            *
+	            -->
+	        </section>
+	        <!--
+	        *
+	        *
+	        * End content...
+	        *
+	        * Begin footer
+	        *<a href="#" title="Blah Blah"><img src="img/thumb/1.jpg" width="75" height="75" alt="" /></a>
+	        -->
+    	    <footer class="container_24">
+
+      		    <section id="flickr" class="grid_10 prefix_1">
+
+        	        <h3>Some more photos from<br /><small>2011</small></h3>
+
+        	        <ul>
+
+    		       	    <li><a href="#" id="a1"></a></li>
+
+    			        <li><a href="#" id="a2"></a></li>
+
+    			        <li><a href="#" id="a3"></a></li>
+
+    			        <li><a href="#" id="a4"></a></li>
+
+    			        <li><a href="#" id="a5"></a></li>
+
+    			        <li><a href="#" id="a6"></a></li>
+
+    			        <li><a href="#" id="a7"></a></li>
+
+    			        <li><a href="#" id="a8"></a></li>
+
+		            </ul>
+
+ 		        </section>
+
+      		    <section id="upcoming_conferences" class="grid_5 prefix_1">
+
+  		            <h3>Fun Run HQ</h3>
+
+                    <p>FUN RUN HQ<br />PO BOX 293<br />Lytham St Annes<br />FY8 9EU<br /><br />Here to help.<br /><br />You can also contact Beaverbrooks Blackpool 10K Fun Run HQ at: funrun [at] beaverbrooks [dot] co [dot] uk.  Ensure you remove the [at] and [dot] and replace with @ and '.'.</p>
+
+		        </section>
+
+                <!--
+
+                <section id="graph" class="grid_5 prefix_1">
+
+                    <h3>Ages</h3>
+
+                    <div id="vertgraph">
+
+                        <p>Below is a graph showing last years runners as a percentage of their age.</p>
+
+                        <ul>
+                            <li class="critical">22</li>
+                            <li class="high" style="height: 80px;">7</li>
+                            <li class="medium" style="height: 50px;">3</li>
+                            <li class="low" style="height: 90px;">8</li>
+                            <li class="info" style="height: 40px;">2</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                -->
+
+      		    <hr class="clear"/>
+
+    	    </footer>
+
+    	    <hr class="clear"/>
+
+        </div>  
+   
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+

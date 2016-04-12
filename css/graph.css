@@ -1,0 +1,70 @@
+/*
+
+  My graph showing differences in age groups
+  http://applestooranges.com/blog/post/css-for-bar-graphs/?id=55 
+
+*/
+
+#vertgraph {                    
+    width: 180px; 
+    height: 207px; 
+    position: relative; 
+    color:#fff;
+}
+#vertgraph ul { 
+    width: 180px; 
+    height: 207px; 
+    margin: 0; 
+    padding: 0; 
+}
+#vertgraph ul li {  
+    position: absolute; 
+    width: 28px; 
+    height: 160px; 
+    bottom: 4px;
+    padding: 0 !important; 
+    margin: 0 !important; 
+    text-align: center; 
+    font-weight: normal; 
+    color: white; 
+    line-height: 2.5em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#vertgraph li.critical  
+{
+    left: 24px; 
+    height: 150px;
+    background-position: 0px bottom !important; 
+    background-color:#B22222;
+}
+
+#vertgraph li.high  
+{
+    left: 52px; 
+    background-position: -28px bottom !important;
+    background-color:#9ACD32;     
+}
+
+#vertgraph li.medium  
+{
+    left: 80px; 
+    background-position: -56px bottom !important;
+    background-color:#DAA520; 
+}
+
+#vertgraph li.low  
+{
+    left: 108px; 
+    background-position: -84px bottom !important; 
+    background-color:#D2691E;
+}
+    
+#vertgraph li.info  
+{
+    left: 136px; 
+    background-position: -112px bottom !important; 
+    background-color:#FF6347;
+}
+

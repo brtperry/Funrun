@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Beaverbrooks Blackpool 10K New Route</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Beaverbrooks,Beaverbrooks Blackpool 10K, Blackpool, 10K, fun run, funrun" />
+  <meta name="description" content="The home page of Beaverbrooks Blackpool 10K" />
+  <meta name="robots" content="index, follow, noarchive" />
+  <meta name="googlebot" content="noarchive" />
+
+  <link rel="stylesheet" type="text/css" href="css/tscreen.css" media="screen, print" />
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAA8sm94Ywhf7RkaIMuFdiRHhTxdGkdi8GzqRx8otrgVNvuiBcRCRSeJaa7PyjyiM_4D1-mKm-GMDSTHg" type="text/javascript"></script>
+  <script type="text/javascript">
+	//<![CDATA[
+	
+    	var IMAGES = [ "orange", "green", "blue", "purple", "yellow", "black", "brown", "gray" ];
+    	var map = null;
+    	var mgr = null;
+    	var gdir;
+
+    	function load() 
+    	{
+    		if (GBrowserIsCompatible()) 
+    		{
+                /***
+         		* 01 OCT 2010 
+         		* For the year 2010 the fun run has anew course.
+         		* Create the google map
+     		    *
+         		***/
+	    		map = new GMap2(document.getElementById("map"));
+            	map.setCenter(new GLatLng(53.831902, -3.056034), 17);
+	     		map.addControl(new GOverviewMapControl());
+	     		map.addControl(new GScaleControl());
+	     		map.enableDoubleClickZoom();
+
+	     		/***
+	     		* Draw directions onto overlay, change these poscodes 
+     		    *
+         		***/
+	     		gdir = new GDirections(map, document.getElementById("directions"));
+            	GEvent.addListener(gdir, "error", handleDirectionErrors);
+
+    	    	function handleDirectionErrors()
+            	{
+      			    if (gdir.getStatus().code == G_GEO_UNKNOWN_ADDRESS)
+        			    alert("No corresponding geographic location could be found for one of the specified addresses. This may be due to the fact that the address is relatively new, or it may be incorrect.\nError code: " + gdir.getStatus().code);
+      			    else if (gdir.getStatus().code == G_GEO_SERVER_ERROR)
+        			    alert("A geocoding or directions request could not be successfully processed, yet the exact reason for the failure is not known.\n Error code: " + gdir.getStatus().code);
+      			    else if (gdir.getStatus().code == G_GEO_MISSING_QUERY)
+        			    alert("The HTTP q parameter was either missing or had no value. For geocoder requests, this means that an empty address was specified as input. For directions requests, this means that no query was specified in the input.\n Error code: " + gdir.getStatus().code);
+      			    else if (gdir.getStatus().code == G_GEO_BAD_KEY)
+        			    alert("The given key is either invalid or does not match the domain for which it was given. \n Error code: " + gdir.getStatus().code);
+      			    else if (gdir.getStatus().code == G_GEO_BAD_REQUEST)
+        			    alert("A directions request could not be successfully parsed.\n Error code: " + gdir.getStatus().code);
+          			    else alert("An unknown error occurred.");
+	     		}
+
+			    gdir.load("from: FY1 2JQ to: Princes Way, Blackpool",{ "locale": "English" });
+
+			    /***
+			    * Start latitude and longtitude co-ordinates 
+			    *
+			    ***/
+			    GEvent.addListener(map, "mousemove", function(point){
+            	    mousemovepoint = point;
+				    document.getElementById("zoominfo").innerHTML = "Lng: " + point.lng().toFixed(6) + " &nbsp;Lat: " + point.lat().toFixed(6);
+				    }
+             	);
+
+         		/***
+         		* Add water points
+         		* Norbreck castle first then Anchorsholme Lane.
+     		    *
+         		***/
+             	var P = new GLatLng(53.857361, -3.049865);
+             	var Start = createMarker(P, '<img src="images/markers/waterbottle.jpeg" />', 2);      	
+	     		map.addOverlay(Start);
+
+	     		var PA = new GLatLng(53.869534, -3.047633);
+	     		Start = createMarker(PA, '<img src="images/markers/waterbottle.jpeg" />', 2);      	
+	     		map.addOverlay(Start);
+
+      		}
+    	}
+
+	    function createMarker(point,html,iconIndex) 
+	    {
+		    var marker = new GMarker(point, { icon: getMarkerIcon(iconIndex) });
+    	    GEvent.addListener(marker, "click", function() {
+        	    marker.openInfoWindowHtml(html);
+    	    });
+	        return marker;
+	    }
+	    function getMarkerIcon(iconIndex) 
+    	{
+		    var icon = new GIcon();
+		    icon.image = "images/markers/mm_20_" + IMAGES[iconIndex] + ".png";
+		    icon.shadow = "images/markers/mm_20_shadow.png";
+		    icon.iconSize = new GSize(12,20);
+		    icon.shadowSize = new GSize(22,20);
+		    icon.iconAnchor = new GPoint(6,20);
+		    icon.infoWindowAnchor = new GPoint(6,1);
+		    icon.infoShadowAnchor = new GPoint(13,13);
+      		return icon;
+    	}
+
+	//]]>
+    </script>
+
+</head>
+
+<body onload="load()" onunload="GUnload()" >
+
+  	<div id="content">
+
+		<img src="images/TheStart.JPG" alt="Start of the Beaverbrooks Fun Run." />		
+  	
+		<div id="text">
+
+  			<h1><span>Beaverbrooks Blackpool 10K Fun Run<br /><acronym>New Route</acronym></span></h1>
+
+		    <div id="container">
+
+			    <div id="map"></div>
+			    <div class="messagerow">
+			        <div id="zoominfo"></div>
+			    </div>
+  	
+			 </div>
+
+		</div>
+
+		<div id="sideBar">
+	
+		    <div id="comments">
+
+			    <h1>New Route</h1>
+			    <p>The google map shows the new route for 2011 from point <acronym>A</acronym> to point <acronym>B</acronym> and back again.</p>
+			    <img src="images/comment_bg.gif" alt="comment bottom"/>
+
+			    <h1>Water Stations</h1>
+			    <p>There will be water stations outward at the Norbreck Castle Hotel, Queens Promenade, at the turnaround point Anchorsholme Lane West and on the return leg between the 6 and 7 kilometre point and the finish line.</p>
+			    <img src="images/comment_bg.gif" alt="comment bottom"/>
+
+			    <h2>Entry fee</h2>
+			    <p>The entry fee this year is still <code>&pound;11.00</code> for <code>16<sub>+</sub></code> and <code>&pound;8.50</code> for ages <code>13 to 15</code>.</p>
+			    <img src="images/comment_bg.gif" alt="comment bottom"/>
+
+		    </div>
+
+	    </div>
+  
+ 	</div>
+
+</body>
+
+</html>

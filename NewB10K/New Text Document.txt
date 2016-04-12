@@ -1,0 +1,61 @@
+        <tr><th>Blackpool Victoria Hospital</th><td>9.29</td></tr>
+    <tr><th>Mrch</th><td>4.13</td></tr>
+    <tr><th>Catscan</th><td>1.01</td></tr>
+    <tr><th>Roy Castle</th><td>2.15</td></tr>
+    <tr><th>Windmill</th><td>25.22</td></tr>
+    <tr><th>MRI Scanner appeal</th><td>1.97</td></tr>
+    <tr><th>Brian House</th><td>13.86</td></tr>
+    <tr><th>Cancer research</th><td>14.49</td></tr>
+    <tr><th>Rosemere</th><td>5.63</td></tr>
+    <tr><th>Blackpool AKD</th><td>6.04</td></tr>
+    <tr><th>Trinity Hospice</th><td>7.05</td></tr>
+    <tr><th>Victoria Hospital PinPoint Appeal</th><td>4.79</td></tr>
+    <tr><th>NSPCC</th><td>4.37</td></tr></table>
+    <!--Data starts in 1983, column 1 is number of runners, column 2 is the money raised.-->
+    <!--
+    
+        <article>
+            <canvas id="canvas1" width="600" height="500" style="border:1px solid #c3c3c3;"></canvas>
+            
+            <table id="beziers">
+                <tr><th>1983</th><td>1800</td><td>17000</td></tr>
+                <tr><th>1984</th><td>1912</td><td>10250</td></tr>    
+                <tr><th>1985</th><td>2890</td><td>10000</td></tr> 
+                <tr><th>1986</th><td>3346</td><td>22039</td></tr>                 
+                <tr><th>1987</th><td>2930</td><td>17355</td></tr>                 
+                <tr><th>1988</th><td>2880</td><td>19485</td></tr>                 
+                <tr><th>1989</th><td>2629</td><td>15200</td></tr>                 
+                <tr><th>1990</th><td>2570</td><td>23585</td></tr>                 
+                <tr><th>1991</th><td>2715</td><td>25920</td></tr>                 
+                <tr><th>1992</th><td>2580</td><td>21262</td></tr>                 
+                <tr><th>1993</th><td>2880</td><td>22271</td></tr>                 
+                <tr><th>1994</th><td>2505</td><td>21166</td></tr>                 
+                <tr><th>1995</th><td>2550</td><td>22254</td></tr>                 
+                <tr><th>1996</th><td>2520</td><td>26125</td></tr>    
+                <tr><th>1997</th><td>3010</td><td>39500</td></tr>    
+                <tr><th>1998</th><td>2935</td><td>46205</td></tr> 
+                <tr><th>1999</th><td>3010</td><td>45173</td></tr>                 
+                <tr><th>2000</th><td>3548</td><td>65600</td></tr>                 
+                <tr><th>2001</th><td>3686</td><td>81120</td></tr>                 
+                <tr><th>2002</th><td>4002</td><td>101947</td></tr>                 
+                <tr><th>2003</th><td>3722</td><td>126189</td></tr>                 
+                <tr><th>2004</th><td>3810</td><td>125482</td></tr>                 
+                <tr><th>2005</th><td>4133</td><td>88590</td></tr>                 
+                <tr><th>2006</th><td>3375</td><td>125339</td></tr>                 
+                <tr><th>2007</th><td>3313</td><td>81519</td></tr>                 
+                <tr><th>2008</th><td>3601</td><td>83844</td></tr>                 
+                <tr><th>2009</th><td>3930</td><td>83906</td></tr>    
+                <tr><th>2010</th><td>3815</td><td>91893</td></tr> 
+                <tr><th>2011</th><td>3050</td><td>64200</td></tr> 
+                <tr><th>2012</th><td>3003</td><td>52000</td></tr> 
+            </table> 
+        </article>
+    
+    <canvas id="canvas2" width="600" height="400" style="border:1px solid #c3c3c3;"></canvas>
+        
+        <div>
+        <b>To:</b> <span id="to"></span><br />
+        <b>From:</b> <span id="from"></span><br />
+        <b>Message:</b> <span id="message"></span>
+        </div>
+        -->

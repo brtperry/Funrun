@@ -1,0 +1,206 @@
+/*
+
+  My media query to handle device reduction of size: Netbook
+
+*/
+
+@media (max-width: 1024px) 
+{
+    html { background: #ffcc00; }
+    
+    /*
+
+      Classes, Combined and screen.
+
+    */ 
+    .container_24
+    {
+         width: 760px;
+    }
+    
+    .grid_10
+    {
+        width:100px;
+        
+    }
+  
+    #container 
+    {
+        width: 760px;
+        margin: 0 auto;
+        -moz-box-shadow: 0px 0px 15px rgba(0,0,0,0.5); /* FF3.5+ */
+        -webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.5); /* Saf3.0+, Chrome */
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.5); /* Opera 10.5, IE 9.0 */  
+  
+    }
+
+    #container #tophead
+    {
+        background: #fff url(../img/bblogo10ksm.png) top center no-repeat;
+        height: 200px;
+    }  
+    
+    #container #tophead #promotion
+    {
+        margin: 160px 0 0 163px;
+        font-size: 22px;
+        width: 430px;
+    }
+    
+    #promotion time
+    {
+        width: 430px;        
+    }
+    
+    #logo
+    {
+        height:470px;
+    } 
+    
+  
+    #menu
+    {
+        width: 760px;
+    }   
+    
+    #menu li
+    {
+        width: 100px;
+    }
+    
+    #menu li a
+    {
+        font-size: 10px;
+    } 
+    
+    #sliding
+    {
+        width:700px;
+    }
+    #donators
+    {
+      display: none;
+    } 
+    
+    .sectional
+    {
+                width: 760px;
+
+    }  
+    
+    #homepage
+    {
+                  width: 760px;      
+    }
+    
+#mappage { 
+
+
+  width : 760px; 
+
+  
+} 
+
+#mappage article { 
+
+        width: 90%;
+}
+
+#map
+{
+    width: 700px;
+}   
+    
+    #celebrate
+    {
+                          width: 760px; 
+                          height:auto;
+    }
+    
+    #myGallery
+    {
+                          width: 700px; 
+    }
+    
+    #celebrate article
+    {
+        width: 90%;
+    }
+    
+    .grid_22
+    {
+                            width: 700px;       
+    }
+    
+    .grid_24
+    {
+                            width: 700px;       
+    }    
+           
+}
+
+/*
+
+  My media query to handle device reduction of size: Handheld devices
+
+
+*/
+
+@media  handheld and (max-width: 480px),
+	screen and (max-device-width: 480px),
+	screen and (max-width: 750px) {
+
+
+    #container #tophead #promotion
+    {
+        margin: 160px 0 0 163px;
+        font-size: 22px;
+        width: 430px;
+	    background-color :#000;
+    }
+
+#thin-sidebar
+{
+  display: none;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map_canvas { height: 100% }
+</style>
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAIPatN5CiTZVFy6FQM0l5U8Ab2uwZ9M6Y&sensor=false">
+</script>
+<script type="text/javascript">
+
+    var directionDisplay;
+    var directionsService = new google.maps.DirectionsService();
+    var map;
+    var origin = null;
+    var destination = null;
+    var waypoints = [];
+    var markers = [];
+
+    var infoWindow = new google.maps.InfoWindow;
+
+//    var onMarkerClick = function() {
+//      var marker = this;
+//      var latLng = marker.getPosition();
+//      infoWindow.setContent('<h3>Marker position is:</h3>' +
+//          latLng.lat() + ', ' + latLng.lng());
+
+//      infoWindow.open(map, marker);
+//    };
+//    google.maps.event.addListener(map, 'click', function() {
+//      infoWindow.close();
+//    });
+
+    function loadmap() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var blackpool = new google.maps.LatLng(53.81741362363378, -3.052654266357422);
+        var myOptions = {
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: blackpool
+        }
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        directionsDisplay.setMap(map);
+        //directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+        //
+
+        calcRoute();
+
+
+//  var southWest = new google.maps.LatLng(53.83330231504873, -3.0533838272094727);
+//  var northEast = new google.maps.LatLng(53.82128344549494, -3.0489420890808105);
+//  var lngSpan = northEast.lng() - southWest.lng();
+//  var latSpan = northEast.lat() - southWest.lat();
+//  for (var i = 0; i < 5; i++) {
+//    var location = new google.maps.LatLng(southWest.lat() + latSpan * Math.random(),
+//        southWest.lng() + lngSpan * Math.random());
+//    var marker = new google.maps.Marker({
+//        position: location,
+//        map: map
+//    });
+//    var j = i + 1;
+//    marker.setTitle(j.toString());
+//    attachInfowindow(marker, i);
+//  }
+
+
+
+        //addMarker(blackpool);
+        addMarker(new google.maps.LatLng(53.83330231504873, -3.0533838272094727));
+        addMarker(new google.maps.LatLng(53.82128344549494, -3.0489420890808105));
+        addMarker(new google.maps.LatLng(53.813454761792286, -3.052750825881958));
+
+//        google.maps.event.addListener(map, 'click', function (event) {
+//            if (origin == null) {
+//                origin = event.latLng;
+//                addMarker(origin);
+//            } else if (destination == null) {
+//                destination = event.latLng;
+//                addMarker(destination);
+//            } else {
+//                if (waypoints.length < 9) {
+//                    waypoints.push({ location: destination, stopover: true });
+//                    destination = event.latLng;
+//                    addMarker(destination);
+//                } else {
+//                    alert("Maximum number of waypoints reached");
+//                }
+//            }
+//        });
+
+    }
+
+function attachInfowindow(marker, number) {
+  var infowindow = new google.maps.InfoWindow(
+      { content: "I like to be on top!"
+      });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setZIndex(++infowindowLevel);
+    infowindow.open(map,marker);
+  });
+}
+
+    function addMarker(latlng) {
+
+//   	    var parking = new GIcon(G_DEFAULT_ICON);
+//   	    parking.image = "img/parkingsm.png";
+//   	    parking.iconSize = new GSize(16, 16);
+//   	    parking.infoWindowAnchor = new GPoint(9, 2);
+
+//   	    markerOptions = { icon: parking };
+
+//   	    var marker = new GMarker(latlng, markerOptions);
+
+
+////        google.maps.event.addListener(marker, 'click', function() {
+
+////            var mark = this;
+////            var latLng = mark.getPosition();
+////            
+////            infoWindow.setContent('<h3>Marker position is:</h3>' + latLng.lat() + ', ' + latLng.lng());
+////            infoWindow.open(map, mark);
+
+////        }
+       // google.maps.event.addListener(map, 'click', function() { infoWindow.close(); })
+
+//   	    google.maps.event.addListener(marker, "click", function () {
+
+//            var mark = this;
+//            var latLng = mark.getPosition();
+//            
+//            infoWindow.setContent('<h3>Marker position is:</h3>' + latLng.lat() + ', ' + latLng.lng());
+//            infoWindow.open(map, mark);
+
+//        }
+//        google.maps.event.addListener(map, 'click', function() { infoWindow.close(); })
+
+//   	    });
+
+//        markers.push(marker);
+
+
+
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            icon: "img/parkingsm.png"
+        })
+
+         markers.push(marker);
+
+//        markers.push(new google.maps.Marker({
+//            position: latlng,
+//            map: map,
+//            icon: "img/parkingsm.png"
+//        }));
+    }
+
+
+    function calcRoute() {
+
+        var request = {
+            origin: "FY1 2JQ, United Kingdom",
+            destination: "Harrowside W, Blackpool FY4",
+            waypoints: waypoints,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING,
+//            optimizeWaypoints: document.getElementById('optimize').checked,
+//            avoidHighways: document.getElementById('highways').checked,
+//            avoidTolls: document.getElementById('tolls').checked
+        };
+
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            }
+        });
+
+        //clearMarkers();
+        directionsVisible = true;
+    }
+
+google.maps.event.addDomListener(window, 'load', loadmap);
+
+</script>
+</head>
+<body>
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+</html>
